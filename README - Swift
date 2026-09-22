@@ -1,0 +1,325 @@
+# DailyPod
+에어팟 기반 졸음 관리 앱 -> swift로 구현
+아래는 swift의 기초에 관한 정보들임
+
+
+
+
+
+
+
+
+아이폰에서 앱으로 실행하기 
+
+Swift  언어로 작성
+아이폰이나 맥북등에서 실행되는 앱을 만들기 위해 개발된 것
+
+아이폰에서 동작하는 실제 앱을 만든 후 실행까지
+
+코드입력 -> 결과출력
+
+Apple이 iOS, Mac, Apple TV 그리고 Apple Watch 앱 개발용으로 만든 강력하고 직관적인 언어, 
+
+Swift. 누구나 놀라운 앱을 만들 수 있게 해주는 강력한 개방형 언어.
+
+카메라 입력 , 모델 다루기, 전처리 입력,초기화, 추론, 결과 보여주기의 구성으로 이루어짐.
+
+Build TensorFlow Lite for iOS
+App store에서
+- Xcode 설치
+
+터미널에서 동작
+- brew install automake
+- brew install libtool
+
+iOS, watch OS, tvOS, macOS, Cross-platform 중 하나 선택 가능
+iOS는 아이폰이나 아이패드가 동작하는데 필요한 아이오에스(iOS) 운영체제를 의미
+
+맥북에서 동작하는 응용프로그램을 만들고 싶다면 macOS
+
+아래 창에 이 항목들은 첫 화면의 유형을 나타내는데 Single View App을 선택
+
+엑스코드 메인 화면은 크게 세 개의 영역으로 나누어져 있다. 
+네비게이터 영역 / 작업 영역 / 유틸리티 영역
+
+내비게이터 영역 위쪽에는 여러 가지 아이콘이 있는데 처음 실행하면 가장 왼쪽에 있는 프로젝트, 내비게이터 영역에는 프로젝트 내비게이터와 관련된 창이 보이며, 이 안에 새로 만든 프로젝트가 표시. 트리 구조를 갖고 있는 프로젝트 안에는 여러 폴더와 파일이 들어 있다. 
+그 파일 중에서 하나를 선택하면 가운데 작업 영역에 선택한 파일의 내용이 표시된다. 
+오른쪽 유틸리티 영역에는 인스펙터(Inspector)라고 불리는 창들이 표시.
+유틸리티 영역 위쪽에 있는 각 아이콘을 눌러보면 선택한 아이콘에 맞는 인스펙터 창이 열린다. 유틸리티 영역의 아래쪽에는 라이브러리를 위한 창 등 기타 화면들이 나타난다.
+
+아이폰이랑 연결하고 아이폰에 앱 실행하는 방법
+https://medium.com/@adie0423/%EC%9E%90%EC%8B%A0%EC%9D%98-%EC%95%84%EC%9D%B4%ED%8F%B0%EC%97%90-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%95%B1-%EC%98%AC%EB%A6%AC%EA%B8%B0-54e07e17d3f7
+
+여기 까지 하면 아이폰에 앱이 실행되는 것까지 확인 해야됨
+
+애플 핸드폰 화면 데모 화면 구성안
+
+애플 핸드폰에서 카메라 버튼 -> 화면에서 촬영 -> 촬영된 영상이 -> 모바일 딥러닝에 들어가고 -> 결과값을 푸쉬알람
+
+화면
+1. 물체 검출 후 세그멘테이션 결과 값 이미지띄우기 
+  2. 결과 메시지는 결과값 내용 구성은 “~~~님 현재 치아상태의 플라그양은 현재 ~입니다. 그 결과 치과 방문이 필요하다고 생각합니다. “
+
+애플 핸드폰에서 
+1. 화면 넘기기
+2. 카메라 촬영
+3. 결과 값 보여주는 창
+
+지금 내가 하고 잇는 것은
+- iOS에 돌리기 위해서 공부하고 잇고 
+- 모델 올리는 방법도 찾는 중.
+
+스위프트의 자료형
+- 변수를 만들 대 자료형을 함께 명시하도록 합니다. 
+- 이것을 스위프트가 타입 기반의 언어이기 때문입니다. 
+- 타입기반의 언어는 코드에 자료형을 명시하지만 타입 기반언어가 아니면 자료형을 명시하지 않는다. 
+
+스위프트는 대소문자를 구분한다. 
+글자는 문자열 큰따옴표안에 넣어둔다.
+변수 선언 예시
+에시 1 : Var count2 : Int =10
+예시 2 : var school : String
+School = “고려대학교”
+print(“학교명 : “ +school)
+
+숫자를 문자열의 형태 (Type Conversion)
+예시 1: var value1 : Int =10
+           Var message : String = “안녕”
+           Var value2 : String = String(value1)
+           print ( message +value2)
+문자열을 숫자로 변환
+var value3 : String =“20”
+var value4 : Int? = Int(value3)
+?가 안전하게 실행할 수 있도록 코드를 입력할때 부터 옵셔널이라는 것
+할당 된 변수에는 지정한 자료형의 값이 할당, nill이 할당
+
+Swift 의 함수 예시
+func show() {
+    print(“안녕”)
+}
+show()
+중괄호로 코드를 감사게 된다. 이렇게 중괄호로 코드를 분리한 것을 코드 블록(Code Block)이라고 한다. 
+
+Swift 문법
+
+For show3() {
+
+   Var count =0
+   for I. N 1.. <11{
+        count = count +I
+    }
+    print(“1부터 10까지 더한 결과”)
+}
+
+show3()
+
+for add(a:Int, b: Int) -> Int {
+   Var count = 0
+   For I in start ..< end {
+       Count = count+i
+   }
+   return a+b;
+}
+
+
+For show2(messages:String, newline:Bool=true){
+    print(message, newline)
+}
+
+show2(message:”안녕하세요 고객님의 위험지수는 아래와 같습니다.”)
+
+
+스위프트를 사용해 아이폰 앱을 만들 때 동시에 작업이 실해오디게 하려면 다음고 같은 세 가지 중의 하나를 사용할 수 있다. 
+
+Thread
+- 스레드를 만들어 실행할 수 있도록 한다. 다른 언어에서도 스레드를 만들어 실행하는 방법을 많이 사용하지만 각각의 작업을 스레드로 만들고 스레드를 관리해야 하므로 조금 비효율적
+
+Operation
+- 각각의 작업은 Operation 객체로 만들고 작업 큐에 넣는 방식을 사용
+- 작업 큐에 넣으면 시스템이 해당 큐에 들어 있는 Operation 객체를 순서대로 실행
+- 스레드를 만든 후 큐에 넣기만 하면 스레드가 알아서 관리하므로 각각의 스레드를 직접 관리할 필요가 없어 조금 더 편리하다고 할 수 있다.
+
+GCD (Grand Central Dispatch)
+- GCD는 Operation 을 사용하는 방식과 비슷하지만 코드를 실행하는 방식이 훨씬 간단하여 iOS나 MAcOS용 프로그램을 만들 때 권장
+
+Thread 사용하기
+- 앱 화면에 버튼과 프로그래바를 추가하고 버튼을 누르면 프로그래스 바 값이 점점 증가하도록 만들어 보겠습니다. 이런 작업을 수행하려면 버튼을 클릭했을때 새로운 스레드를 만들고 그 스레드 안에서 프로그래스 바의 값을 변경하도록 해야 한다. 
+
+프로그젝트가 만들어지고 왼쪽 프로젝트 내비게이터에서 Main.stroyboard 파일을 클릭하여 인터페이스 빌더 화면을 연다. 그리고 화면에 버튼과 라벨을 하나씩 넣은 다음 프로그레스를 추
+
+
+클래스를 만들고 화면에 이미지로 보여주기
+
+- 앱에 보여줄 이미지를 추가할 때는 프로젝트 내비게이터 창에서 애셋 카탈로그 추가하거나 그룹을 만들어 추가할 수 있다. 
+- 코드에서 이미지 객체를 만들 때는 Ullmage 클래스를 사용하고 named 파라미터로 이미지 이름을 전달.
+- 홤녀에 보이는 이미지 뷰의 image 속성에 UIImage 객체를 설정하면 화면에 이미지가 보이게 된다. 
+- 클래스로부터 만들어진 인스턴스 객체의 메소드 안에서 화면에 보이는 이미지 뷰의 이미지를 바꿀 수 있습니다. 
+
+앱의 수명 주기
+
+앱이 실행되면 상태 변화가 일어나는데 포그라운드 상태와 백그라운드 상태를 오가게 됩니다. 
+- Active - 앱의 화면이 표시되고 실행 중인 상태
+- Inactive - 앱의 실행 중이지만 이벤트를 받고 있지 않은 상태
+- Background -> 앱이 백그라운드에서 실행되고 있는 상태
+- Suspended -> 앱이 백그라운드에 있지만 실행되고 있지 않은 상태
+- Not running -> 앱이 실행되지 않는 상태 또는 앱이 종료된 상태
+
+새로운 프로젝트를 만들면 많은 파일들이 자동으로 만들어지는데 그중에서 가장 먼저 볼 수 있는 것이 프로젝트의 메타 정보.
+
+
+여러개의 화면을 만들어서 화면끼리 전환하기
+방식은 3가지로 구성
+1. 프레젠테이션 방식으로 다른 화면 띄우기
+2. 내비게이션 컨트롤러를 사용하여 자동으로 다른 화면 띄우기
+3. 세그웨이를 사용하여 자동으로 다른 화면 띄우기
+
+세그웨이는 하나다에서 다른 것으로 부드럽게 넘어가다
+앱에서는 화면전환
+
+세그웨이 종류
+- Show
+    - 가장 일반적인 세그웨이. 새화면으로 이동. Stack 구조로서 새 화면이 원래 화면 위를 덮는 구조.
+- Show Detail 
+    - SplitView 구조에서 원래 화면을 master 
+- Present Modally
+    - 새화면이 모달처럼 원래 홤녀 위 전체를 뒤덮습니다. 원래 화면은 새화면 뒤에 그대로 존재
+- Custom
+    - 사용자 정의 세그웨이를 만든다.
+
+M, A 아이콘의 의미
+- M : 이전 버전에서 파일이 수정(Modified)
+- A : 이전 버전에서 파일이 새롭게 추가 (Added)
+
+파커뷰 (Picker View)는 아이폰에서 원하는 항목을 선택할 수 있게 해주는 객체, 
+파커 (Picker)라고도 합니다. 
+데이트 파커가 날짜와 시간을 선택하기 위한 객체라면 피커 뷰는 문자열을 선택하기 위한 객체
+
+파커뷰 앱을 위한 기본 환경 구성
+- 피커뷰의 룰렛 중 하나를 선택하면 해당 이미지를 이미지 뷰에 해당 이미지를 이미지 뷰에 나타내 주는 기능.
+
+
+선택한 이미지 이름과 해당 이미지 출력하기 
+
+파커 뷰가 나타나고 선택 목록에 파일명이 보인다. 그리고 마우스로 파ㅓㅋ 뷰를 선택하여 위, 아래로 움직여 보면 피커 뷰의 룰렛이 돌아가는 것을 확인
+
+하지만 파커 뷰에 아직 어떤 동작을 하라는 코딩을 하지 않았기 때문
+
+파커 뷰의 룰렛을 돌려 특정 이미지의 이름을 선택했을때 해당 이미지의 이름이 레이블에 출력되고 선택한 이미지가 이미지 뷰에 나타나도록 코딩
+
+
+델리케이트 
+
+파커 뷰가 상호작용하려면 피커 뷰에 대한 델리게이트 메서드를 사용해야 합니다. 
+델리 게이트란 : 대리자라고 하며 누군가 해야 할 일을 대신 해주는 역할을 합니다. 예를 들어 특정 객체 와 상호 작용할 때 메시지를 넘기면 그 메세지에 대한 책임은 델리게이트로 위임.
+
+그리고 델리게이트 메서드는 해당 역할을 수행하며 처리 결과나 메시지 등을 받습니다. 
+
+즉, 사용자가 객체를 터치했을때 해야 할 일을 델리 게이트 메서드에 구현하고 해당 객체가 터치 되었을 때 델리게이트가 호출되어 위임받은 일을 하게 되는 것입니다. 
+
+그렇게 때문에 현재 사용하고 있는 뷰 컨트롤러에서 피커 뷰에 대한 델리게이트 메서드를 사용한다고 설정해야 합니다. 
+
+1. 파커뷰의 델리게이트 사용을 설정하기 위하여 마우스 오른족 버튼으로 피커 뷰를 선택한 후 위쪽의 뷰 컨트롤러 아이콘 위로 끌어다 놓는다. 
+2. 선택화면에서 delegate를 선택
+3. 피커 뷰 객체와 레이블, 이미지 뷰 객체에 아웃렛 변수를 추가하였다. 이제 아웃렛 변수를 사용해 각 객체에 접근할 수 있게 되었다. 또한 피커 뷰의 델리게이트 메서드를 사용할 수 있도록 설정을 완료.
+
+파커뷰를 동작시키기 위한 코드를 작성
+- 파커뷰를 동작시키기 위해서는 파커 뷰 델리게이트 클래스를 상속
+    - UIPickerViewDelegate 클래스와 UIPickerViewDataSource 클래스를 상속
+    - 상속을 받기 위해서는 클래스를 선언하면 클래스 이름의 오른쪽에 ‘:’과 함께 상속받을 클래스의 이름을 입력
+    - 변수 및 상수 추가
+        - let MAX_ARRAY_NUM=10 // 이미지의 파일명을 저장할 배열의 최대크기를 지정
+        - let PICKER_VIEW_COLUMN =1 //파커뷰의 열의 갯수
+        - Var imageFileName = [“1.jpg”,“1.jpg”,“1.jpg”,“1.jpg”,“1.jpg”,“1.jpg”,“1.jpg”,“1.jpg”]
+        - 자신이 추가한 이미지의 이름과 파일명에 맞춰 기입.
+    - 파커뷰의 동작에 필요한 델리게이트 메서드를 뷰 컨트롤러(ViewConroller) 클래스의 맨 아래에 추가
+- 피커 뷰의 델리게이트 메서드를 추가해야 한다. 
+
+//returns the number of ‘columns’ to display
+func numberOfComponents (in pickerView: UIPickerView) -> Int{
+	return PICKER_VIEW_COLUMN
+}
+
+//returns the # of rows in each  component ..
+func pickerView(_ pickerView: UIPickerView!, numberOfRowsInComponent component : Int ) -> Int {
+      return imageFileName.count
+}
+
+func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, FforComponent component : Int) -> String?{
+    return imageFileName[row]
+}
+
+피커 뷰의 델리게이트 메서드를 알고 있을 경우에는 직접 입력하면 되지만 처음 사용하거나 잘 기억이 나지 않은 메서드라면 어더너 메서드를 어떻게 사용해야 할 지 알 수 없습니다. 이런 경우에는 command를 누른 상태에서 클래스 이름 위에 마우스 커서를 올리면 클래스 이름이 선택.
+
+선택한 이미지 이름 출력하기 
+- 사용자가 피커 뷰의 룰렛을 돌려 원하는 열을 선택했을대 할일을 델레게이트에게 지시하는 메서드를 맨 아래에 추가 
+- 피커 뷰의 델리게이트 메서드 중 didSelectRow 인수가 포함된 메서드는 사용자가 피커 뷰의 룰렛을 선택했을 때 호출. 사용자가 선택한 피커뷰의 row를 사용하여 원하는 일을 코딩 가능
+- Func pickerView (_ pickerView : UIPickerView, didSelectRow row: Int, inComponent component : Int) {
+             lblImageFielwName.text = imageFileName[row]
+       }
+- 사용자가 피커 뷰의 룰렛에서 선택한 row 값을 사용하여 imageFileName 배열에서 row 값에 해당하는 문자열을 가지고 온다. 그리고 가져온 문자열을 레이블의 아웃렛 변수인 IbIImageFileName.text에 저장.
+
+선택한 이미지를 이미지 뷰에 출력하기 
+- 파커뷰의 룰렛을 선택할 경우 선택된 파일명에 해당하는 이미지를 이미지 뷰에 출력
+    - 앞에서 변수를 추가한 위치 중에서 PICKER_VIEW_COLUMN과 imageFileName 사이에 UIImage 타입의 배열 imageArray를 선언 (선언하는 위치는 어느 위치든 상관 없이 상수, 변수, 아웃렛 변수는 가장 윗부분에 선언하고 함수와 메서드는 아랫부분에 선언)
+    - Var imageArray = [UIImage?]()
+- 뷰가 로드되었을 때 MAX_ARRAY_NUM의 개수만큼 imageFileName 에 이쓴ㄴ 이미지를 가져와 UIImage 타입의 상수 image 에 할당하고, 할당된 image 를 배열 imageArray 에 추가한다. 또한 레이블과 이미지 뷰에 배열의 처음에 해당하는 imaegeFileName[0] 과 imageArray[0] 을 각각 출력합니다. 다음 소스를 viewDidLoad 함수 맨 아랫부분에 추가합니다. 
+
+Override func viewDidLoad(){
+   Super.viewDidLoad()
+    // DO any additional setup after loading the view, typically. From a nib.
+    For I in 0 < MAX_ARRAY_NUM{
+        let image = UIImage(named : image
+    }
+}
+
+Description 
+- i 라는 변수를 0부터 MAX_ARRAY_NUM 보다 작을 때까지 루프를 실행합니다. (여기서는 0부터 9까지 루프를 실행)
+- Image 라는 변수를 선언. imageFileName[I]에 있는 파일명을 사용하여 UIImage 타입의 이미지를 생성합니다. 생성한 이미지를 image 변수에 할당.
+- ImageArray배열에 방금 만든 iamge를 추가합니다. 
+- IBIImageFielName 레이블에 ImageFielName 배열의 첫번째 파일명을 출력
+- 이미지 뷰에 첫번째 이미지가 나타납니다. 
+
+마지막으로 피커 뷰의 룰렛이 선택되었을때 동작하는 didSelectRow 인수가 포함된 델리게이트 메서드의 맨 아랫부분에 선택한 이미지를 이미지 뷰에 나타내 주는 코드를 추가
+
+func pickerView(_ pickerView: UIPickerView, didSelectRow row:Int, inComponent component: Int) {
+   IbIIamgeFileName.text = iamgeFileName[row]
+   iamgeView.iamge =. mageArray[row]
+}
+Desription
+- 사용자가 피커 뷰의 룰렛에서 선택한 row 값ㅇ르 사용하여 imageArray 배열에서 row 값에 해당하는이미지를 가지고 옵니다. 그리고 가져온 이미지를 이미지 뷰의 아웃렛 변수인 imageView.image 에 저장.
+결과보기
+- 실행 버튼을 클릭하여 결과를 확인
+- 룰렛을 선택하면 선택된 파일명은 레이블에 이미지는 이미지 뷰에 나타나는 것을 확인할 수 있다. 
+
+파커 뷰 룰렛에 파일명 대신 이미지 출력하기
+- 앞에서 선언한 titleForRow 인수를 가지는 델리게이트 메서드를 주석 처리합니다. titleFowRow 인수를 가지는 델리게이트 메서드는 각 row에 대한 타이틀을 정의하는 메서드
+- // func pickerView(_pickerView:UIPIckerView, titleForRow row: Int, forComponent componen:Int)-> String? {
+-    return imageFileName[row]
+- }
+
+
+viewForRow 인수가 포함되어 있는 델리게이트 메서드를 새롭게 추가한다. viewForRow 인수가 포함되어 있는 메서드는 각 row 의 view 를 정의하는 메서드입니다. 새롭게 추가되는 메서드는 각 row의 view를 설정하고 UIView 타입을 리턴합니다. 여기서는 iamgeView를 리턴
+
+Func pickerView(_ pickerView: UIPIckerVIew, viewForRow row: Int, forComponent component : Int, resuming view: UIView?) -> UIView {
+   Let iamgeView = UIImageView(image:imageArray[row])
+   iamgeView.frame = CGRect(x:0,y:0, width:100, height:150)
+   return iamgeView
+}
+
+파커 뷰에 컴포넌트의 각 열의 뷰를 UIView 타입의 값으로 넘겨줍니다. 여기서는 이미지 뷰에 저장되어 있는 이미지를 넘겨 줍니다. 
+선택된 row에 해당되는 이미지를 imageArray에서 가져옵니다. 
+이미지 뷰의 프레임 크기를 설정.
+이미지 뷰를 리턴합니다. 
+
+마지막으로 피커 뷰의 룰렛의 세로 높이를 변경
+1. 피커 뷰의 높이를 지정할 상수를 맨위의 상수 선언부 중 PICKER_VIEW_COMUMN 과 imageArray 사이에 정의
+	let PICKER_VIEW_HEIGHT:CGFloat = 80
+2. 피커 뷰의 높이를 전달할 키퍼 뷰 델리게이트 메서드를 numberOfComponents 메서드 아래에 추가합니다. 
+
+//returns height of for each component
+func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component : Int) -> CGFloat {
+    return PICKER_VIEW_HEIGHT
+}
+
+피커 뷰에게 컴포넌트를 높이를 정수 값으로 넘겨주는 델리게이트 메서드입니다. 여기서는 PICKER_VIEW_HEIGHT 의 값을 80 을 넘겨 줍니다. 
+
