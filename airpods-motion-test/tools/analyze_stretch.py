@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """Test B analysis: can the distance to the reference separate correct attempts from other motions?
 
-Usage: python3 tools/analyze_stretch.py stretch_attempts.csv
+Usage: python3 tools/analyze_stretch.py [stretch_attempts.csv]   (default: the file in summary/data/raw_logs/)
 Prints, for both distance measures (simple, DTW), mean/min/max per label, whether
 max(normal) < min(other), and the ratio min(other) / max(normal).
 """
 import csv, sys
+from pathlib import Path
+
+DEFAULT = Path(__file__).resolve().parent.parent / "summary" / "data" / "raw_logs" / "stretch_attempts.csv"
 from statistics import mean
 
 MEASURES = [("dist_simple", "(a) simple"), ("dist_dtw", "(b) DTW")]
 
 
 def main():
-    if len(sys.argv) != 2:
-        print(__doc__)
-        return 1
+    path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT
     by = {"normal": [], "other": []}
-    with open(sys.argv[1], newline="") as f:
+    with open(path, newline="") as f:
         for r in csv.DictReader(f):
             if r["label"] in by:
                 by[r["label"]].append(r)

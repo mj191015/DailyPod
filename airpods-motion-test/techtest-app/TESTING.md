@@ -4,13 +4,13 @@ AirPods 습관 코치 앱의 핵심 기술이 되는지 확인하는 검증용 �
 앱을 열면 메뉴에 **Test A / B / C**와 **1차 알람 (AlarmKit)** 이 있습니다. 통과/실패 칸에 ✅ / ❌ 와 메모를 적어 주세요.
 
 - 기기: iPhone 15 Pro Max / iOS 26.6.2, 에어팟 모델: ______________
-- 날짜: ______________  앱 Bundle ID: `com.woowoong.techtest`
+- 날짜: ______________  앱 Bundle ID: `<내 Bundle ID>`
 - 모든 로그 파일은 앱 Documents에 저장됩니다. 아이폰 **파일 앱 > 나의 iPhone > TechTest**에서 보이고,
   맥에서는 아래 명령으로 가져옵니다.
 
 ```bash
 xcrun devicectl device copy from --device <기기 UDID> --domain-type appDataContainer \
-  --domain-identifier com.woowoong.techtest --source Documents --destination ./logs
+  --domain-identifier <내 Bundle ID> --source Documents --destination ./logs
 ```
 
 > 통과 기준은 **제안값**입니다. 팀에서 기준을 정했다면 그 값으로 바꿔 쓰세요.

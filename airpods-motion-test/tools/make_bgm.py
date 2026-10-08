@@ -3,7 +3,7 @@
 
 Kick drum + clap + hi-hat + bass + fast arpeggio, 120 BPM, 24 bars = 48 s, mono 48 kHz.
 Every sound wraps around the end of the buffer, so the loop is seamless.
-The app plays techtest-app/Audio/bgm.caf. To use another song, replace that one file
+The app plays techtest-app/AirPodsProMotion/Audio/bgm.caf. To use another song, replace that one file
 (any of bgm.caf / .m4a / .mp3 / .wav / .aac works) and rebuild.
 
 Usage: python3 tools/make_bgm.py        (needs numpy, scipy; macOS afconvert)
@@ -87,7 +87,7 @@ buf *= 0.89 / np.max(np.abs(buf))
 pcm = (buf * 32767).astype("<i2")
 
 here = Path(__file__).resolve().parent.parent
-out_dir = here / "techtest-app" / "Audio"
+out_dir = here / "techtest-app" / "AirPodsProMotion" / "Audio"
 out_dir.mkdir(parents=True, exist_ok=True)
 wav_path = out_dir / "bgm_source.wav"
 with wave.open(str(wav_path), "wb") as w:

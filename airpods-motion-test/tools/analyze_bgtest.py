@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """Test A analysis: find gaps (> --min-gap seconds) between samples in bgtest_*.csv.
 
-Usage: python3 tools/analyze_bgtest.py bgtest_mode2_*.csv [--min-gap 1.0]
+Usage: python3 tools/analyze_bgtest.py [bgtest_*.csv ...] [--min-gap 1.0]\n(with no files it reads every bgtest_*.csv in summary/data/raw_logs/)
 If the matching *_events.csv sits next to the sample file, the time from the start event to the first
 sample and from the last sample to the stop event is also counted (a run whose samples simply stop
 has no gap *between* samples, so it would otherwise look clean).
 Each gap row: last sample before the gap, first sample after it, length by wall clock and by
 monotonic uptime (uptime stops while the device sleeps, so wall > uptime means the phone slept).
 """
-import argparse, csv, sys
+import argparse, csv, glob, sys
+from pathlib import Path
+
+RAW = Path(__file__).resolve().parent.parent / "summary" / "data" / "raw_logs"
 
 
 def load(path):
@@ -42,9 +45,11 @@ def run_bounds(path):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("files", nargs="+")
+    ap.add_argument("files", nargs="*")
     ap.add_argument("--min-gap", type=float, default=1.0, help="gap threshold in seconds (default 1.0)")
     args = ap.parse_args()
+    if not args.files:
+        args.files = sorted(f for f in glob.glob(str(RAW / "bgtest_mode*.csv")) if not f.endswith("_events.csv"))
     for path in args.files:
         rows = load(path)
         print(f"\n== {path}")
