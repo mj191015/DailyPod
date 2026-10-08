@@ -1,0 +1,5 @@
+wall_iso,wall_epoch,uptime_s,elapsed_s,restarts,event,route
+2026-10-08T18:02:27.753Z,1791482547.753378,49352.239997250006,0.3,0,"start file=bgm.caf play=true targetVolume=0.43 fade=3s continueOnSpeaker=false autoStop30=false","예슬의 AirPods Pro #3 [BluetoothA2DPOutput]"
+2026-10-08T18:02:30.269Z,1791482550.268893,49354.75548383334,2.8,0,"app did enter background","예슬의 AirPods Pro #3 [BluetoothA2DPOutput]"
+2026-10-08T18:02:34.548Z,1791482554.547903,49359.034442625,7.1,0,"app will enter foreground","예슬의 AirPods Pro #3 [BluetoothA2DPOutput]"
+2026-10-08T18:02:35.833Z,1791482555.833167,49360.31969704167,8.4,0,"stop: stop button","예슬의 AirPods Pro #3 [BluetoothA2DPOutput]"

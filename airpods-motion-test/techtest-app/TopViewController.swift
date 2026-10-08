@@ -26,13 +26,23 @@ class TopViewController: UIViewController, UITableViewDataSource, UITableViewDel
         {
             if #available(iOS 26.1, *) { return AlarmKitAlertViewController() }
             let v = UIViewController(); v.view.backgroundColor = .systemBackground; return v
+        },
+        { BGMTestViewController() },
+        { StretchGuideViewController() },
+        {
+            // second-stage alert simulation: BGM starts, the guide opens, "완료" stops the BGM
+            BGMPlayer.shared.start()
+            return StretchGuideViewController(simulation: true, onDone: { BGMPlayer.shared.stop(reason: "완료 button") })
         }
     ]
     private var itemTitle: [String] = [
         "Test A: Background sensor",
         "Test B: Stretch matching",
         "Test C: Alert sound",
-        "1차 알람 (AlarmKit)"
+        "1차 알람 (AlarmKit)",
+        "Test E: BGM 재생",
+        "Test F: 스트레칭 가이드",
+        "2차 알림 시뮬레이션"
     ]
 
 
